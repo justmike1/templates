@@ -16,6 +16,15 @@ def get_data(symbol, endpoint) -> str:
     print(res)
     return res
 
+
+""" this is what requested but api.blockchain's routing is shit, so I used binance's, but it works anyways """
+# def get_data(symbol, endpoint) -> str:
+#     res = r.get(url=f"https://api.blockchain.com/v3/exchange/{ endpoint }/{ symbol }").json()
+#     print(res)
+#     return res
+# get_data(symbol="BTC-USD", endpoint="tickers")
+
+
 if __name__ == "__main__":
     while True:
         redis.set('timestamp', timestamp)
