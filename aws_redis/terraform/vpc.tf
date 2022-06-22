@@ -2,9 +2,6 @@ locals {
   cidrsubnet      = var.vpc_cidr
   private_subnets = [cidrsubnet(local.cidrsubnet, 4, 1), cidrsubnet(local.cidrsubnet, 4, 2), cidrsubnet(local.cidrsubnet, 4, 3)]
   public_subnets  = [cidrsubnet(local.cidrsubnet, 4, 4), cidrsubnet(local.cidrsubnet, 4, 5), cidrsubnet(local.cidrsubnet, 4, 6)]
-  #If you add or remove subnets - update this variable with the count
-  # This is required to avoid a limitation with computed values when using terraform
-  # This variable will depend on number of zones + 1 unless single nat gateway = true
   single_nat_gateway = false
   num_zones = 1
 }
